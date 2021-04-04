@@ -29,7 +29,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import './contactslist.dart';
+import 'search_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: ContactsList(),
+      home: SearchList(),
     );
   }
 }

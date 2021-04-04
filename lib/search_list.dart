@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'dishes_data.dart';
 
-class ContactsList extends StatefulWidget {
-  static String tag = 'contactlist-page';
+class SearchList extends StatefulWidget {
+  static String tag = 'searchlist-page';
 
   @override
   State<StatefulWidget> createState() {
-    return new _ContactsListState();
+    return new _SearchListState();
   }
 }
 
 List<Dish> dishes = getDishData();
 
-class _ContactsListState extends State<ContactsList> {
+class _SearchListState extends State<SearchList> {
   TextEditingController searchController = new TextEditingController();
   String filter;
   int selectedIndex;
@@ -136,7 +136,8 @@ class _ContactsListState extends State<ContactsList> {
                                           children: [
                                             Column(
                                               children: [
-                                                Text("Address"),
+                                                Text(
+                                                    '${dishes[index].address}'),
                                                 ElevatedButton(
                                                     child:
                                                         Text("Get directions")),
