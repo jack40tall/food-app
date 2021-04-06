@@ -46,3 +46,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//TODO
+// Landing page
+// Map addresses to restaurant
+// clicking tile automatically changes index
+// Review Modal
+// Review page (more reviews)
+// location data
+// filter options
+// Get Directions button implementation
+// Fix stars

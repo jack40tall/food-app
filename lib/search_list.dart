@@ -142,7 +142,8 @@ class _SearchListState extends State<SearchList> {
                                                     child:
                                                         Text("Get directions")),
                                                 ElevatedButton(
-                                                    child: Text("More dishes"))
+                                                    child: Text(
+                                                        "Dishes from \nthis restaurant"))
                                               ],
                                             ),
                                             Column(
