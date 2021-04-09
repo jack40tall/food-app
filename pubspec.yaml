@@ -21,9 +21,11 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  maps_launcher: ^2.0.0
   flutter:
     sdk: flutter
   flutter_rating_bar: ^4.0.0
+  
 
 
   # The following adds the Cupertino Icons font to your application.

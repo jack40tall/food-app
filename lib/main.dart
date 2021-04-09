@@ -50,10 +50,13 @@ class MyApp extends StatelessWidget {
 //TODO
 // Landing page
 // Map addresses to restaurant
-// clicking tile automatically changes index
+//// clicking tile automatically changes index
+// Fix search tiles
+// Move "more reviews" down
 // Review Modal
+// Modal Layer blur
 // Review page (more reviews)
 // location data
 // filter options
-// Get Directions button implementation
-// Fix stars
+//// Get Directions button implementation
+//// Fix stars
