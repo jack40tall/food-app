@@ -3,8 +3,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'dishes_data.dart';
 
 class SearchList extends StatefulWidget {
+  SearchList({this.search});
   static String tag = 'searchlist-page';
-
+  final String search;
   @override
   State<StatefulWidget> createState() {
     return new _SearchListState();
@@ -14,7 +15,9 @@ class SearchList extends StatefulWidget {
 List<Dish> dishes = getDishData();
 
 class _SearchListState extends State<SearchList> {
+  _SearchListState({this.search});
   TextEditingController searchController = new TextEditingController();
+  String search;
   String filter;
   int selectedIndex;
 
@@ -22,6 +25,7 @@ class _SearchListState extends State<SearchList> {
   initState() {
     searchController.addListener(() {
       setState(() {
+        if (search != null) searchController.text = search;
         filter = searchController.text;
       });
     });

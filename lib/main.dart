@@ -29,6 +29,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:food_app/home_page.dart';
 import 'search_list.dart';
 
 void main() => runApp(MyApp());
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: SearchList(),
+      home: MyHomePage(title: "FoodApp"),
     );
   }
 }
