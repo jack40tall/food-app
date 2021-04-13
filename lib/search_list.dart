@@ -6,11 +6,11 @@ import 'package:maps_launcher/maps_launcher.dart';
 
 class SearchList extends StatefulWidget {
   static String tag = 'searchlist-page';
+  String search;
+  SearchList({Key key, this.search}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    return new _SearchListState();
-  }
+  _SearchListState createState() => _SearchListState(search);
 }
 
 List<Dish> dishes = getDishData();
@@ -19,6 +19,11 @@ class _SearchListState extends State<SearchList> {
   TextEditingController searchController = new TextEditingController();
   String filter;
   int selectedIndex;
+
+  _SearchListState(String search) {
+    searchController.text = search;
+    filter = search;
+  }
 
   @override
   initState() {

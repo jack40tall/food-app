@@ -29,6 +29,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:food_app/home_page.dart';
 import 'search_list.dart';
 
 void main() => runApp(MyApp());
@@ -37,12 +38,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Contacts',
+      // title: 'Contacts',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: SearchList(),
+      home: MyHomePage(),
     );
   }
 }
@@ -51,12 +52,30 @@ class MyApp extends StatelessWidget {
 // Landing page
 // Map addresses to restaurant
 //// clicking tile automatically changes index
-// Fix search tiles
-// Move "more reviews" down
-// Review Modal
-// Modal Layer blur
-// Review page (more reviews)
+//// Fix search tiles
+//// Move "more reviews" down
+//// Review Modal
+//// Modal Layer blur
+//// Review page (more reviews)
 // location data
 // filter options
+// Make dish name the title.
+// Improve styling
+// Add 'x' for the search to clear
+// Style snackbar better
+//
+// EVALS:
+// Audrey -
+// no home screen
+// first page should be blank
+// Matt -
+// Get rid of selected
+// too far
+// Mads -
+// Snackbar color
+// Category screen
+// Browsing screen would be better with dishes
+// Sort list by restaurant name
+// Landing page to soften the blow.
 //// Get Directions button implementation
 //// Fix stars
