@@ -682,8 +682,6 @@ class _SearchListState extends State<SearchList> {
     }
   }
 
-  void _moreReviewPress(BuildContext context) {}
-
   void _onGetDirectionsPress(BuildContext context, String queryAddress) {
     MapsLauncher.launchQuery(queryAddress);
   }
