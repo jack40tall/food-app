@@ -19,6 +19,7 @@ class _SearchListState extends State<SearchList> {
   TextEditingController searchController = new TextEditingController();
   String filter;
   int selectedIndex;
+  List<Review> _dishReviews;
 
   _SearchListState(String search) {
     searchController.text = search;
@@ -52,9 +53,22 @@ class _SearchListState extends State<SearchList> {
             new Padding(
               padding: new EdgeInsets.all(8.0),
               child: new TextField(
+                cursorColor: Colors.blue[900],
                 controller: searchController,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(width: 1.5, color: Colors.blue[900]),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(32.0))),
                   hintText: 'Search by dish or restaurant',
+                  suffixIcon: IconButton(
+                    onPressed: searchController.clear,
+                    icon: Icon(
+                      Icons.clear,
+                      color: Colors.blue[900],
+                    ),
+                  ),
                   contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(32.0)),
@@ -107,7 +121,8 @@ class _SearchListState extends State<SearchList> {
                                       '${dishes[index].imagePath}',
                                       fit: BoxFit.cover,
                                     ))),
-                            onTap: () => _onTapItem(context, index),
+                            onTap: () =>
+                                _onTapItem(context, index, dishes[index].id),
                           ),
                           Divider(color: Colors.grey[400]),
                           if (selectedIndex == index)
@@ -170,7 +185,9 @@ class _SearchListState extends State<SearchList> {
                                                                   width: 190,
                                                                   height: 35,
                                                                   child: Text(
-                                                                    "Ellipsis mode adds triple dots at the end of visible text if the text is too long. It doesn't break in the middle of a word unless the word is longer than one line. In using ellipsis mode, it's important to set maxLines property because it uses the default max lines if you do not define it, even with softWrap sets to true.",
+                                                                    _dishReviews[
+                                                                            0]
+                                                                        .review,
                                                                     softWrap:
                                                                         true,
                                                                     maxLines: 2,
@@ -195,7 +212,7 @@ class _SearchListState extends State<SearchList> {
                                                                         itemSize:
                                                                             20.0,
                                                                         initialRating:
-                                                                            dishes[index].rating,
+                                                                            _dishReviews[0].score,
                                                                         minRating:
                                                                             0,
                                                                         direction:
@@ -234,7 +251,9 @@ class _SearchListState extends State<SearchList> {
                                                                   width: 190,
                                                                   height: 35,
                                                                   child: Text(
-                                                                    "Ellipsis mode adds triple dots at the end of visible text if the text is too long. It doesn't break in the middle of a word unless the word is longer than one line. In using ellipsis mode, it's important to set maxLines property because it uses the default max lines if you do not define it, even with softWrap sets to true.",
+                                                                    _dishReviews[
+                                                                            1]
+                                                                        .review,
                                                                     softWrap:
                                                                         true,
                                                                     maxLines: 2,
@@ -259,7 +278,7 @@ class _SearchListState extends State<SearchList> {
                                                                         itemSize:
                                                                             20.0,
                                                                         initialRating:
-                                                                            dishes[index].rating,
+                                                                            _dishReviews[0].score,
                                                                         minRating:
                                                                             0,
                                                                         direction:
@@ -307,7 +326,7 @@ class _SearchListState extends State<SearchList> {
                                                                               0,
                                                                               0,
                                                                               1)),
-                                                                          backgroundColor: MaterialStateProperty.all<Color>(Colors.black)),
+                                                                          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue[900])),
                                                                       child: Text("More reviews", style: TextStyle(fontSize: 12, color: Colors.white))))),
                                                         ],
                                                       ))
@@ -339,7 +358,9 @@ class _SearchListState extends State<SearchList> {
                                                               _openReviewMenu(
                                                                   dishes[index]
                                                                       .name,
-                                                                  rating),
+                                                                  rating,
+                                                                  dishes[index]
+                                                                      .id),
                                                     )
                                                   ])),
                                             ],
@@ -394,7 +415,8 @@ class _SearchListState extends State<SearchList> {
                                           '${dishes[index].imagePath}',
                                           fit: BoxFit.cover,
                                         ))),
-                                onTap: () => _onTapItem(context, index),
+                                onTap: () => _onTapItem(
+                                    context, index, dishes[index].id),
                               ),
                               Divider(color: Colors.grey[400]),
                               if (selectedIndex == index)
@@ -460,7 +482,8 @@ class _SearchListState extends State<SearchList> {
                                                                           35,
                                                                       child:
                                                                           Text(
-                                                                        "Ellipsis mode adds triple dots at the end of visible text if the text is too long. It doesn't break in the middle of a word unless the word is longer than one line. In using ellipsis mode, it's important to set maxLines property because it uses the default max lines if you do not define it, even with softWrap sets to true.",
+                                                                        _dishReviews[0]
+                                                                            .review,
                                                                         softWrap:
                                                                             true,
                                                                         maxLines:
@@ -486,7 +509,7 @@ class _SearchListState extends State<SearchList> {
                                                                             itemSize:
                                                                                 20.0,
                                                                             initialRating:
-                                                                                dishes[index].rating,
+                                                                                _dishReviews[0].score,
                                                                             minRating:
                                                                                 0,
                                                                             direction:
@@ -525,7 +548,8 @@ class _SearchListState extends State<SearchList> {
                                                                           35,
                                                                       child:
                                                                           Text(
-                                                                        "Ellipsis mode adds triple dots at the end of visible text if the text is too long. It doesn't break in the middle of a word unless the word is longer than one line. In using ellipsis mode, it's important to set maxLines property because it uses the default max lines if you do not define it, even with softWrap sets to true.",
+                                                                        _dishReviews[1]
+                                                                            .review,
                                                                         softWrap:
                                                                             true,
                                                                         maxLines:
@@ -551,7 +575,7 @@ class _SearchListState extends State<SearchList> {
                                                                             itemSize:
                                                                                 20.0,
                                                                             initialRating:
-                                                                                dishes[index].rating,
+                                                                                _dishReviews[0].score,
                                                                             minRating:
                                                                                 0,
                                                                             direction:
@@ -593,7 +617,7 @@ class _SearchListState extends State<SearchList> {
                                                                                   index]),
                                                                           style: ButtonStyle(
                                                                               padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.fromLTRB(0, 0, 0, 1)),
-                                                                              backgroundColor: MaterialStateProperty.all<Color>(Colors.black)),
+                                                                              backgroundColor: MaterialStateProperty.all<Color>(Colors.blue[900])),
                                                                           child: Text("More reviews", style: TextStyle(fontSize: 12, color: Colors.white))))),
                                                             ],
                                                           ))
@@ -627,7 +651,9 @@ class _SearchListState extends State<SearchList> {
                                                               _openReviewMenu(
                                                                   dishes[index]
                                                                       .name,
-                                                                  rating),
+                                                                  rating,
+                                                                  dishes[index]
+                                                                      .id),
                                                         )
                                                       ])),
                                                 ],
@@ -643,7 +669,7 @@ class _SearchListState extends State<SearchList> {
         ));
   }
 
-  void _onTapItem(BuildContext context, int index) {
+  void _onTapItem(BuildContext context, int index, int dishId) {
     if (selectedIndex == index) {
       setState(() {
         selectedIndex = null;
@@ -651,6 +677,7 @@ class _SearchListState extends State<SearchList> {
     } else {
       setState(() {
         selectedIndex = index;
+        _dishReviews = getReviews(dishId);
       });
     }
   }
@@ -671,73 +698,107 @@ class _SearchListState extends State<SearchList> {
         MaterialPageRoute(builder: (context) => ReviewPage(dish: currDish)));
   }
 
-  void _openReviewMenu(String dishName, double rating) {
+  void _openReviewMenu(String dishName, double rating, int dishId) {
+    double currRating = rating;
+    TextEditingController reviewController = new TextEditingController();
     showDialog(
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+              contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
               actions: [
-                new ElevatedButton(
-                    onPressed: () => _showReviewSubmit(context),
-                    child: Text("Submit")),
-                new ElevatedButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    child: Text("Close"))
+                new Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 20, 8),
+                  child: ElevatedButton(
+                      onPressed: () => _showReviewSubmit(
+                          context, currRating, reviewController.text, dishId),
+                      child: Text(
+                        "Submit",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                )
               ],
               content: Container(
-                  height: 280,
+                  // padding: EdgeInsets.fromLTRB(26, 0, 26, 10),
+                  height: 300,
                   child: Column(
                     children: [
-                      Column(children: [
-                        Text(dishName, style: TextStyle(fontSize: 24)),
-                        RatingBar.builder(
-                          itemSize: 40.0,
-                          initialRating: rating,
-                          minRating: 0,
-                          direction: Axis.horizontal,
-                          allowHalfRating: true,
-                          itemCount: 5,
-                          itemPadding: EdgeInsets.symmetric(horizontal: 0),
-                          itemBuilder: (context, _) => Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                          onRatingUpdate: (rating) {
-                            // print(rating);
-                          },
-                        )
-                      ]),
-                      Text(
-                        "(tap to change)",
-                        style: TextStyle(fontSize: 14),
-                      ),
                       Container(
-                        height: 38,
-                        width: 400,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: "Comments"),
-                        autofocus: true,
-                        maxLines: 5,
-                      ),
+                          padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          // color: Colors.blue,
+                          // width: 400,
+                          height: 30,
+                          child: Row(children: [
+                            Spacer(),
+                            IconButton(
+                                padding: EdgeInsets.all(0),
+                                icon: Icon(Icons.clear),
+                                color: Colors.blue[900],
+                                onPressed: () => Navigator.of(context).pop())
+                          ])),
+                      Padding(
+                          padding: EdgeInsets.fromLTRB(26, 0, 26, 10),
+                          child: Column(
+                            children: [
+                              Column(children: [
+                                // Column(children: [
+                                Text(dishName, style: TextStyle(fontSize: 24)),
+                                RatingBar.builder(
+                                  itemSize: 40.0,
+                                  initialRating: rating,
+                                  minRating: 0,
+                                  direction: Axis.horizontal,
+                                  allowHalfRating: true,
+                                  itemCount: 5,
+                                  itemPadding:
+                                      EdgeInsets.symmetric(horizontal: 0),
+                                  itemBuilder: (context, _) => Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  ),
+                                  onRatingUpdate: (rating) {
+                                    currRating = rating;
+                                  },
+                                )
+                              ]),
+                              Text(
+                                "(tap to change)",
+                                style: TextStyle(fontSize: 14),
+                              ),
+                              Container(
+                                height: 38,
+                                width: 400,
+                              ),
+                              TextField(
+                                controller: reviewController,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: "Comments"),
+                                autofocus: true,
+                                maxLines: 5,
+                              ),
+                            ],
+                          ))
                     ],
                   )));
         });
   }
 
-  void _showReviewSubmit(BuildContext context) {
+  void _showReviewSubmit(
+      BuildContext context, double score, String reviewText, int dishId) {
+    Review newReview = new Review(score, reviewText);
+    addReview(newReview, dishId);
     Navigator.of(context).pop();
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        backgroundColor: Colors.tealAccent[400],
-        content: const Text('Thank you for your input',
+        backgroundColor: Colors.blue[900],
+        content: const Text('Thanks for your input!😄',
+            textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
+                fontSize: 26,
+                color: Colors.white,
                 fontWeight: FontWeight.w400)),
       ),
     );

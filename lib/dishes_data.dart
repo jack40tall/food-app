@@ -209,6 +209,12 @@ String getAddress(String restaurant) {
   return addressMap[restaurant];
 }
 
+void addReview(Review review, int dishId) {
+  List<Review> reviews = getReviews(dishId);
+  reviews.insert(0, review);
+  dishReviews[dishId] = reviews;
+}
+
 class Review {
   double score;
   String review;
