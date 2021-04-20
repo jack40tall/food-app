@@ -135,6 +135,54 @@ List<Dish> dishes = [
       distance: 7.5,
       imagePath: 'dish_images/yummys_sushi.jpg',
       id: 16),
+  Dish(
+      name: 'Pizza',
+      restaurant: 'Brick Oven Pizza',
+      hoursOpen: '4pm - 10pm',
+      rating: 3.6,
+      distance: 7.5,
+      imagePath: 'dish_images/brickoven_pizza.jpg',
+      id: 17),
+  Dish(
+      name: 'Pizza',
+      restaurant: 'Slab',
+      hoursOpen: '4pm - 10pm',
+      rating: 3.6,
+      distance: 7.5,
+      imagePath: 'dish_images/slab_pizza.jpg',
+      id: 18),
+  Dish(
+      name: 'Pizza',
+      restaurant: 'Pizza Pie Cafe',
+      hoursOpen: '4pm - 10pm',
+      rating: 3.6,
+      distance: 7.5,
+      imagePath: 'dish_images/pizzapiecafe_pizza.jpg',
+      id: 19),
+  Dish(
+      name: 'Hamburger',
+      restaurant: 'Red Robin\'s',
+      hoursOpen: '4pm - 10pm',
+      rating: 3.6,
+      distance: 7.5,
+      imagePath: 'dish_images/redrobins_burger.jpg',
+      id: 20),
+  Dish(
+      name: 'Hamburger',
+      restaurant: 'McDonald\'s',
+      hoursOpen: '4pm - 10pm',
+      rating: 3.6,
+      distance: 7.5,
+      imagePath: 'dish_images/mcdonalds_burger.jpg',
+      id: 21),
+  Dish(
+      name: 'Hamburger',
+      restaurant: 'Denny\'s',
+      hoursOpen: '4pm - 10pm',
+      rating: 3.6,
+      distance: 7.5,
+      imagePath: 'dish_images/dennys_burger.jpg',
+      id: 22),
 ];
 
 class Dish {
@@ -185,8 +233,8 @@ Map<int, List<Review>> dishReviews = {
   ],
   1: [
     Review(5.0, "This is the best dish I've ever had"),
-    Review(4.8,
-        "By far one of the tastiest Katsu dishes I've had outside of Japan"),
+    Review(3.0,
+        "Decent Katsu, but not as good as in Japan."),
     Review(3.2,
         "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
     Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
@@ -199,6 +247,167 @@ Map<int, List<Review>> dishReviews = {
         "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
     Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
   ],
+  3: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "I love Jinya! Some of the appetizers aren't as good as they could be, but I never find myself unsatisfied with their entrees."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  4: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "Asa Ramen is best known for their ramen, of course, but their Katsu curry isn't bad either!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  5: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "I usually don't get anything but sushi at sushi restaurants, but I'm glad I tried their Katsu Curry!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  6: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "Jinya's entrees are always on point, and their Katsu Curry is no exception."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  7: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "I'm so glad their curry turned out to be okay- and it was more than okay!  I loved it!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  8: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "The sushi here is great, but so is their curry!  Pleasantly surprised."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  9: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "What do you expect?  It's Asa Ramen.  If you miss Japan's ramen, this is the place to go."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  10: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "Worth a few extra bucks to mix up your sushi dinner!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  11: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "The Sushi Brothers make some great affordable sushi!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  12: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "Happy Sumo has a lot of great dishes, and the sushi is one of them.  Two thumbs up!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  13: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(2.8,
+        "Honestly, not that great when you think that Asa Ramen is just a little bit away."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  14: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(1.8,
+        "Asa Ramen is literally right there.  Don't bother with 930"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  15: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "My wife and I love Yamato! I lived in Japan for a few years, and we are both snobs for good food. These guys consistently have great food. The owners and staff are Japanese mostly. The environment/acoustics are nice. Try the yam and Liz rolls. They're cheap and delicious"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  16: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(2.8,
+        "Yummy's has a lot of great food, but their sushi is rather sub-par.  Get something else."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  17: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "If you're a student like me, it's amazing pizza for a steal!  My wife and I always get an Extra large for \$15 and it's two meals in one."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  18: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "You can get more at Brick Oven down the street, but Slab has some delicious and ingenious pizzas!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  19: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(3.8,
+        "Quantity over quality, baby."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  20: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "Red Robin's has some amazing burgers at a varied price range.  They're all good, but you get bang for your buck with any order.  Not to mention bottomless fries!"),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  21: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "I mean, you can't go wrong with their deals and dollar menu.  Great stuff for the price."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+  22: [
+    Review(5.0, "This is the best dish I've ever had"),
+    Review(4.8,
+        "Denny's is my favorite place!  I come here every year for my birthday and I can't get enough."),
+    Review(3.2,
+        "It tasted great, but it was lukewarm when they served it to me. Other than that, it would've been a great experience"),
+    Review(4.5, "Perfectly breaded, and the rice was on point. Great dish!")
+  ],
+
 };
 
 List<Review> getReviews(int dishId) {
